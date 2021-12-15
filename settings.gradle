@@ -1,0 +1,6 @@
+rootProject.name = 'trabalho_1_etapa'
+include 'exe1'
+include 'exe2'
+include 'exe3'
+include 'exe4'
+
