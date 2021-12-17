@@ -13,7 +13,7 @@ public class Main {
         LocalDate dataDevolucao = null;
         double valorDiaria = 0D;
 
-        while (valorDiaria == 0) {
+        while (valorDiaria <= 0) {
             System.out.println("Digite o valor da diária: ");
             try {
                 valorDiaria = valor(in.nextLine());
