@@ -17,9 +17,9 @@ public class Veiculo {
 
     public String toStringData() {
         return "Valor da diária: " + getValorDiaria() + "\n" +
-                "Data de Locação: " + getDataLocacao().getDayOfMonth() +"/"+getDataLocacao().getMonthValue()+"/"+getDataLocacao().getYear() + "\n" +
-                "Data de Devolução: " + getDataDevolucao().getDayOfMonth() +"/"+getDataDevolucao().getMonthValue()+"/"+getDataDevolucao().getYear() + "\n" +
-                "Dias de Locação:" + getDiasLocacao() +  "\n" +
+                "Data de Locação: " + getDataLocacao().getDayOfMonth() + "/" + getDataLocacao().getMonthValue() + "/" + getDataLocacao().getYear() + "\n" +
+                "Data de Devolução: " + getDataDevolucao().getDayOfMonth() + "/" + getDataDevolucao().getMonthValue() + "/" + getDataDevolucao().getYear() + "\n" +
+                "Dias de Locação:" + getDiasLocacao() + "\n" +
                 "Valor Total da locação: " + getValorTotal() + "\n";
     }
 
@@ -44,7 +44,11 @@ public class Veiculo {
     }
 
     public void setDiasLocacao(int diasLocacao) {
-        this.diasLocacao = diasLocacao;
+        if (diasLocacao > 0) {
+            this.diasLocacao = diasLocacao;
+        } else {
+            System.out.println("Dias de locação inválido, alteração não foi salva!");
+        }
     }
 
     public double getValorTotal() {
@@ -52,7 +56,11 @@ public class Veiculo {
     }
 
     public void setValorTotal(double valorTotal) {
-        ValorTotal = valorTotal;
+        if (valorTotal > 0) {
+            this.ValorTotal = valorTotal;
+        } else {
+            System.out.println("Valor total inválido, alteração não foi salva!");
+        }
     }
 
     public double getValorDiaria() {
@@ -60,6 +68,11 @@ public class Veiculo {
     }
 
     public void setValorDiaria(double valorDiaria) {
+        if(valorDiaria > 0) {
         this.valorDiaria = valorDiaria;
+        }
+        else {
+            System.out.println("Valor da diária inválido, alteração não foi salva!");
+        }
     }
 }
